@@ -2,7 +2,7 @@
 
 An interactive web-based animation featuring a **Chibi Character** (Shinchan Edition) that responds dynamically to your keyboard and mouse inputs in real-time.
 
-![Preview](preview_placeholder.png) <!-- Note: User can replace this with a real screenshot -->
+![Preview](Screenshot_11.png)
 
 ## 🌟 Features
 
