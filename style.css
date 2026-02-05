@@ -101,14 +101,15 @@ body {
     position: relative;
 }
 
-/* Key Sizes */
+/* Key Sizes - Adjusted for 75% Alignment */
 .key.backspace { width: 45px; }
 .key.tab { width: 35px; }
 .key.caps { width: 42px; }
 .key.enter { width: 52px; }
-.key.shift-l { width: 62px; }
-.key.space { width: 140px; }
-.key.ctrl, .key.opt, .key.cmd { width: 34px; }
+.key.shift-l { width: 70px; } /* Diperlebar agar sejajar dengan baris bawah */
+.key.space { width: 144px; } /* Disesuaikan agar total baris pas */
+.key.ctrl, .key.opt, .key.cmd { width: 32px; }
+.key.arrow { width: 24px; }
 
 /* Keyboard GLOW EFFECT KETIKA MENYALA (EFEK LAMPU) */
 .key.active {
