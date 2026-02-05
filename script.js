@@ -102,8 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (virtualMouse) virtualMouse.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
         if (handRight) {
-            handRight.style.right = `calc(${-moveX}px + 10px)`;
-            handRight.style.bottom = `calc(${-moveY}px - 10px)`;
+            handRight.style.right = `calc(${-moveX}px - 40px)`;
+            handRight.style.bottom = `calc(${-moveY}px - 60px)`;
+            
+            // Tambahkan rotasi dinamis kearah mouse (nilai negatif untuk miring ke kanan)
+            const rotateDeg = -15 + (moveX * -0.05); 
+            handRight.style.transform = `rotate(${rotateDeg}deg)`;
         }
     });
 
