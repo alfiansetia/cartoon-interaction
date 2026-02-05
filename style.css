@@ -1,0 +1,337 @@
+/* CSS - Force Glow for Keyboard and Mouse */
+:root {
+    --skin: #ffe0bd;
+    --shirt: #ff6b6b;
+    --desk-color: #2c3e50;
+    --key-off: #34495e;
+    --key-on: #00d2ff;
+    --mouse-off: #ecf0f1;
+    --mouse-on: #f1c40f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a2e;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.instruction {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.game-scene {
+    position: relative;
+    width: 750px; /* Dikurangi menjadi 750px (sebelumnya 900px) */
+    height: 420px;
+    background: #16213e;
+    border-radius: 40px;
+    border: 8px solid #0f3460;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+/* Desk */
+.desk {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    background: var(--desk-color);
+    border-top: 5px solid #34495e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+/* Keyboard Styling */
+.keyboard-container {
+    background: #111;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.key-row {
+    display: flex;
+    gap: 4px;
+}
+
+.key {
+    width: 24px;
+    height: 24px;
+    background: #222;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: #444;
+    transition: all 0.05s ease;
+    border-bottom: 2px solid #000;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Key Sizes */
+.key.backspace { width: 45px; }
+.key.tab { width: 35px; }
+.key.caps { width: 42px; }
+.key.enter { width: 52px; }
+.key.shift-l { width: 62px; }
+.key.space { width: 140px; }
+.key.ctrl, .key.opt, .key.cmd { width: 34px; }
+
+/* Keyboard GLOW EFFECT KETIKA MENYALA (EFEK LAMPU) */
+.key.active {
+    background-color: #ffffff !important; 
+    color: #000000 !important;
+    box-shadow: 0 0 10px #ffffff, 
+                0 0 30px #00d2ff, 
+                0 0 50px #00d2ff !important;
+    transform: translateY(2px) !important;
+    border-bottom: 0 !important;
+    z-index: 50 !important;
+}
+
+/* Mouse Pad & Mouse */
+.mouse-pad {
+    width: 400px; /* Dikurangi menjadi 400px (sebelumnya 500px) */
+    height: 150px;
+    background: #0a0a0a;
+    border-radius: 15px;
+    position: relative;
+    border: 2px solid #333;
+    box-shadow: inset 0 0 25px rgba(0,255,255,0.12);
+}
+
+.virtual-mouse {
+    width: 32px;
+    height: 48px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #444;
+}
+
+.mouse-glow {
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(241, 196, 15, 0.6) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.mouse-buttons {
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    height: 15px;
+}
+
+.mouse-button {
+    flex: 1;
+    height: 100%;
+    background: #2a2a2a;
+    border-radius: 8px 8px 2px 2px;
+}
+
+/* Mouse GLOW EFFECT KETIKA MENYALA */
+.mouse-button.active {
+    background-color: #f1c40f !important;
+    box-shadow: 0 0 15px #f1c40f !important;
+}
+
+.mouse-glow.active {
+    opacity: 1 !important;
+}
+
+/* Character Styling - SHINCHAN VERSION */
+:root {
+    --skin: #ffe0bd;
+    --shirt: #ff0000; /* Merah Shinchan */
+}
+
+.character {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+    margin-bottom: 90px;
+}
+
+.body {
+    width: 170px;
+    height: 125px;
+    background: var(--shirt);
+    border-radius: 60px 60px 40px 40px;
+    position: absolute; bottom: 0; left: 15px;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+}
+
+.face {
+    width: 160px; height: 130px;
+    background: var(--skin);
+    border-radius: 80px 80px 95px 95px; /* Pipi Tembem */
+    position: absolute; top: 0px; left: 20px;
+    display: flex; justify-content: center;
+    padding-top: 55px; gap: 40px;
+    box-shadow: 0 10px 0px rgba(0,0,0,0.05);
+    z-index: 5;
+}
+
+/* Telinga Shinchan */
+.ear {
+    position: absolute;
+    top: 50px;
+    width: 25px;
+    height: 35px;
+    background: var(--skin);
+    border-radius: 50%;
+    z-index: 4; /* Di belakang face (z-index 5) */
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.ear.left { left: 10px; }
+.ear.right { right: 10px; }
+
+/* Rambut Shinchan yang Lucu */
+.hair {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 40px;
+    background: #000;
+    border-radius: 80px 80px 0 0;
+    z-index: 10;
+}
+
+/* Detail rambut kuncir/jabrik lucu */
+.hair::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 40px;
+    width: 25px;
+    height: 25px;
+    background: #000;
+    transform: rotate(45deg);
+    border-radius: 4px;
+}
+.hair::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 40px;
+    width: 25px;
+    height: 25px;
+    background: #000;
+    transform: rotate(45deg);
+    border-radius: 4px;
+}
+
+/* Alis Tebal Shinchan */
+.eyebrow {
+    position: absolute;
+    top: 35px;
+    width: 50px;
+    height: 14px;
+    background: #000;
+    border-radius: 10px;
+}
+.eyebrow.left { left: 25px; transform: rotate(-10deg); }
+.eyebrow.right { right: 25px; transform: rotate(10deg); }
+
+.eye { 
+    width: 18px; 
+    height: 18px; 
+    background: #000; 
+    border-radius: 50%;
+    position: relative;
+}
+/* Kilau Mata */
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    border-radius: 50%;
+}
+.mouth {
+    position: absolute; bottom: 30px;
+    width: 25px; height: 12px;
+    border-bottom: 3px solid #2c3e50;
+    border-radius: 0 0 15px 15px;
+}
+.mouth.open {
+    height: 20px;
+    background: #c0392b;
+    border: none;
+    border-radius: 50%;
+}
+
+/* Hands - Reverted to Rounded Version */
+.hand-keyboard { /* Kiri */
+    width: 45px; height: 100px;
+    background: var(--skin);
+    border-radius: 25px 25px 10px 10px; /* Atas bulat, bawah agak lancip */
+    position: absolute; left: -25px; bottom: 10px;
+    transform-origin: top center;
+    transform: rotate(-15deg);
+    transition: all 0.1s;
+    z-index: 15;
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+}
+
+.hand-keyboard.pressing {
+    transform: rotate(25deg) translateY(90px) translateX(50px);
+}
+
+.hand-mouse { /* Kanan */
+    width: 45px; height: 110px;
+    background: var(--skin);
+    border-radius: 25px 25px 10px 10px;
+    position: absolute; right: -15px; bottom: 10px;
+    z-index: 15;
+    transition: all 0.05s linear;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
